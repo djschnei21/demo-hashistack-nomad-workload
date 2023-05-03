@@ -25,7 +25,7 @@ resource "vault_database_secrets_mount" "mongodb" {
     name                 = "mongodb"
     username             = "admin"
     password             = "password"
-    connection_url       = "mongodb://{{username}}:{{password}}@bofa-demo-mongodb.service.consul:27017/admin?tls=false"
+    connection_url       = "mongodb://{{username}}:{{password}}@demo-mongodb.service.consul:27017/admin?tls=false"
     max_open_connections = 0
     allowed_roles = [
       "demo",

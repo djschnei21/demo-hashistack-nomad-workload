@@ -1,4 +1,4 @@
-job "bofa-demo-mongodb" {
+job "demo-mongodb" {
     datacenters = ["dc1"]
     
     type = "service"
@@ -13,7 +13,7 @@ job "bofa-demo-mongodb" {
         }
 
         service {
-            name = "bofa-demo-mongodb"
+            name = "demo-mongodb"
             port = "27017"
 
             connect{

@@ -1,4 +1,4 @@
-job "bofa-demo-dashboard" {
+job "demo-dashboard" {
     datacenters = ["dc1"]
     
     type = "service"
@@ -13,14 +13,14 @@ job "bofa-demo-dashboard" {
             }
         }
         service {
-            name = "bofa-demo-dashboard"
+            name = "demo-dashboard"
             port = "http"
 
             connect {
                 sidecar_service {
                     proxy {
                         upstreams {
-                            destination_name = "bofa-demo-mongodb"
+                            destination_name = "demo-mongodb"
                             local_bind_port  = 27017
                         }
                     }

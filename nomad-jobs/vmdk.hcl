@@ -1,4 +1,4 @@
-job "bofa-demo-fullvm" {
+job "demo-fullvm" {
     datacenters = ["dc1"]
 
     group "fullvm" {
@@ -7,7 +7,7 @@ job "bofa-demo-fullvm" {
             port "ssh" {}
         }
         service {
-            name = "bofa-demo-fullvm-ssh"
+            name = "demo-fullvm-ssh"
             port = "ssh"
         }
         task "fullvm" {
