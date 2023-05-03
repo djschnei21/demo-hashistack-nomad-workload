@@ -1,6 +1,6 @@
 # HashiStack Demo Project
 
-This repository contains a demo project showcasing the integration of the HashiStack, which includes [Vault](https://www.vaultproject.io/), [Consul](https://www.consul.io/), [Nomad](https://www.nomadproject.io/), and [Terraform](https://www.terraform.io/). The project deploys a MongoDB instance and a dashboard application, demonstrating the use of dynamic secrets, service mesh, and service discovery features provided by the HashiStack.
+This repository contains a demo project showcasing integration of the HashiStack, which includes [Vault](https://www.vaultproject.io/), [Consul](https://www.consul.io/), [Nomad](https://www.nomadproject.io/), and [Terraform](https://www.terraform.io/). The project deploys a MongoDB instance and a dashboard application onto Nomad, demonstrating the use of dynamic secrets, service mesh, and service discovery features provided by the HashiStack.
 
 ## Features
 
@@ -35,7 +35,9 @@ Consul is used for service mesh and service discovery in this demo project. The 
 ```
 
 2. Initialize the Terraform working directory:
+```
    terraform init
+```
 
 3. Create a terraform.tfvars file with your Nomad and Vault addresses and tokens:
 ```
@@ -54,9 +56,6 @@ Consul is used for service mesh and service discovery in this demo project. The 
 ## Cleanup
 
 To destroy the resources created by this demo project, run the following command:
-
-terraform destroy
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
+terraform apply -destroy
+```
