@@ -1,0 +1,17 @@
+Job
+│   Description: The top-level object that represents a single
+│   workload to be scheduled and managed by the Nomad cluster.
+│
+└── Task_Groups
+    │   Description: A group of related tasks that are co-located 
+    │   and share resources, such as memory and network.
+    │
+    ├── Services
+    │   Description: Service definitions for tasks in the group, 
+    │   describing how they should be registered and monitored by 
+    │   a service discovery system like Consul.
+    │
+    └── Tasks
+        Description: Individual units of work within a task group, 
+        representing a single process, container, or command that 
+        should be executed.
