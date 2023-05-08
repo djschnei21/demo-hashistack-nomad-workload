@@ -3,3 +3,4 @@ set-vars.sh
 terraform.tfstate.backup
 .terraform
 terraform.tfstate
+plan.out
