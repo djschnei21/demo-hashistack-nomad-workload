@@ -4,3 +4,5 @@ terraform.tfstate.backup
 .terraform
 terraform.tfstate
 plan.out
+packer/input/
+packer/output/
