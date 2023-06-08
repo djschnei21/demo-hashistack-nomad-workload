@@ -60,6 +60,6 @@ resource "nomad_job" "dashboard" {
 
 
 // Optional Full KVM based VM Example
-#resource "nomad_job" "fullvm" {
-#  jobspec = file("${path.module}/nomad-jobs/vmdk.hcl")
-#}
+resource "nomad_job" "fullvm" {
+ jobspec = file("${path.module}/nomad-jobs/mongodb-vmdk.hcl")
+}
