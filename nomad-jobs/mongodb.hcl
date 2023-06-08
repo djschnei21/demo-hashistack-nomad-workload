@@ -25,7 +25,7 @@ job "demo-mongodb" {
             driver = "docker"
 
             config {
-                image = "mongo:latest"
+                image = "mongo:5"
             }
             env {
                 # This will immedietely be rotated be Vault
