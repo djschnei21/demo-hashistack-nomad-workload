@@ -38,7 +38,7 @@ resource "null_resource" "mongodb_root_rotation" {
     vault_database_secrets_mount.mongodb
   ]
   provisioner "local-exec" {
-    command = "VAULT_ADDR=${var.vault_addr} VAULT_TOKEN=${var.vault_token} vault write -f ${vault_database_secrets_mount.mongodb.path}/rotate-root/mongodb-on-nomad"
+    command = "curl --header \"X-Vault-Token: ${var.vault_token}\" --request POST ${var.vault_addr}/v1/${vault_database_secrets_mount.mongodb.path}/rotate-root/mongodb-on-nomad"
   }
 }
 
