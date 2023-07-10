@@ -27,8 +27,27 @@ job "demo-dashboard" {
                 }
             }
         }
+        task "wait-for-mongodb" {
+            driver = "docker"
+
+            config {
+                image = "mongo:latest"
+
+                entrypoint = ["/bin/sh"]
+
+                command = "-c"
+
+                args = [
+                    "while ! mongo --host 127.0.0.1 --port 27017 --eval 'db.adminCommand(\"ping\")' --quiet >/dev/null 2>&1; do sleep 5; done"
+                ]
+            }
+        }
         task "dashboard" {
             driver = "docker"
+            lifecycle {
+                hook = "poststart"
+                sidecar = false
+            }
             vault {
                 policies = ["demo"]
                 change_mode   = "restart"
