@@ -31,14 +31,14 @@ job "demo-dashboard" {
             driver = "docker"
 
             config {
-                image = "mongo:latest"
+                image = "mongo:5"
 
                 entrypoint = ["/bin/sh"]
 
                 command = "-c"
 
                 args = [
-                    "while ! mongo --host 127.0.0.1 --port 27017 --eval 'db.adminCommand(\"ping\")' --quiet >/dev/null 2>&1; do sleep 5; done"
+                    "sleep 10 && while ! mongo --host 127.0.0.1 --port 27017 --eval 'db.adminCommand(\"ping\")' --quiet >/dev/null 2>&1; do sleep 5; done"
                 ]
             }
         }
