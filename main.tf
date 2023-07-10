@@ -22,7 +22,7 @@ resource "vault_database_secrets_mount" "mongodb" {
   path = "mongodb"
 
   mongodb {
-    name                 = "mongodb"
+    name                 = "mongodb-on-nomad"
     username             = "admin"
     password             = "password"
     connection_url       = "mongodb://{{username}}:{{password}}@demo-mongodb.service.consul:27017/admin?tls=false"
@@ -38,7 +38,7 @@ resource "null_resource" "mongodb_root_rotation" {
     vault_database_secrets_mount.mongodb
   ]
   provisioner "local-exec" {
-    command = "VAULT_ADDR=${var.vault_addr} VAULT_TOKEN=${var.vault_token} vault write -f ${vault_database_secrets_mount.mongodb.path}/rotate-root/mongodb"
+    command = "VAULT_ADDR=${var.vault_addr} VAULT_TOKEN=${var.vault_token} vault write -f ${vault_database_secrets_mount.mongodb.path}/rotate-root/mongodb-on-nomad"
   }
 }
 
