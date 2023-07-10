@@ -38,7 +38,7 @@ job "demo-dashboard" {
                 command = "-c"
 
                 args = [
-                    "sleep 10 && while ! mongo --host 127.0.0.1 --port 27017 --eval 'db.adminCommand(\"ping\")' --quiet >/dev/null 2>&1; do sleep 5; done"
+                    "sleep 10 && while ! mongo --host 127.0.0.1 --port 27017 --eval 'db.adminCommand(\"ping\")' --quiet; do sleep 5; done"
                 ]
             }
         }
